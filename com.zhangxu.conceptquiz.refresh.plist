@@ -6,7 +6,7 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/zsh</string>
-    <string>/Users/zhangxu/本地/zt-concept-quiz/refresh.sh</string>
+    <string>/Users/zhangxu/本地/zt-concept-quiz/publish.sh</string>
   </array>
   <key>StartCalendarInterval</key>
   <dict><key>Hour</key><integer>16</integer><key>Minute</key><integer>10</integer></dict>
