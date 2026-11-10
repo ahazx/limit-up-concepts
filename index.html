@@ -4,32 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#FAF9F6">
+<meta name="theme-color" content="#F3F8FD">
 <meta name="description" content="涨停股票概念记忆练习：看股票猜概念，答完看备注解析。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FAF9F6'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C8452F'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23F3F8FD'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%232E7DD1'/%3E%3C/svg%3E">
 <title>涨停概念记忆</title>
 <style>
 :root{
-  --paper:#FAF9F6; --card:#FFFFFF; --card-2:#F5F3EE;
-  --ink:#1B1A17; --ink-2:#57534B; --ink-3:#8C887E;
-  --line:#E7E3DA; --line-2:#D9D4C8;
-  --brand:#C8452F; --brand-soft:#FBEDE9;
-  --ok:#17795E; --ok-soft:#E6F4EF;
-  --err:#C8452F; --err-soft:#FBEDE9;
-  --miss:#B4813A; --miss-soft:#FBF2E2;
+  --paper:#F3F8FD; --card:#FFFFFF; --card-2:#EBF3FB;
+  --ink:#0F2131; --ink-2:#4B6076; --ink-3:#8199AD;
+  --line:#DDE9F5; --line-2:#C6D8E9;
+  --brand:#2E7DD1; --brand-soft:#E7F1FC;
+  --ok:#0E8A6E; --ok-soft:#E2F4EE;
+  --err:#D1495B; --err-soft:#FBE9EC;
+  --miss:#B9832C; --miss-soft:#FBF2E1;
   --r-lg:16px; --r-md:12px; --r-sm:9px;
-  --sh:0 1px 2px rgba(27,26,23,.04), 0 10px 30px -18px rgba(27,26,23,.18);
+  --sh:0 1px 2px rgba(15,33,49,.05), 0 12px 32px -20px rgba(19,74,124,.28);
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 [data-theme="dark"]{
-  --paper:#141412; --card:#1D1C19; --card-2:#242320;
-  --ink:#F3F1EC; --ink-2:#B9B4A9; --ink-3:#8B867B;
-  --line:#2E2C28; --line-2:#3A3833;
-  --brand:#E4644B; --brand-soft:#33201B;
-  --ok:#4FC7A2; --ok-soft:#152A24;
-  --err:#E4644B; --err-soft:#33201B;
-  --miss:#D9A55C; --miss-soft:#2E2517;
-  --sh:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.6);
+  --paper:#0D1620; --card:#15212D; --card-2:#1B2937;
+  --ink:#E9F1F9; --ink-2:#A7B9C9; --ink-3:#7A8FA2;
+  --line:#233140; --line-2:#2E3F4F;
+  --brand:#5BA8EE; --brand-soft:#16324A;
+  --ok:#4ECBAE; --ok-soft:#12312C;
+  --err:#EF7C8B; --err-soft:#341F28;
+  --miss:#DFA953; --miss-soft:#2D2618;
+  --sh:0 1px 2px rgba(0,0,0,.45), 0 12px 32px -20px rgba(0,0,0,.7);
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -103,16 +103,16 @@ button:disabled{cursor:default}
   padding:8px 14px;font-size:13.5px;color:var(--ink-2);transition:.16s;white-space:nowrap;
 }
 .chip:hover{border-color:var(--ink-3)}
-.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 4px 12px -6px var(--brand)}
 .chip em{font-style:normal;opacity:.55;margin-left:4px;font-size:12px}
 .chip.sel{background:var(--brand-soft);border-color:var(--brand);color:var(--brand)}
 .cta{
   display:flex;align-items:center;justify-content:center;gap:10px;
   width:100%;padding:16px;border-radius:var(--r-md);
-  background:var(--ink);color:var(--paper);font-weight:640;font-size:16px;
-  transition:.18s;margin-bottom:12px;
+  background:var(--brand);color:#fff;font-weight:640;font-size:16px;
+  transition:.18s;margin-bottom:12px;box-shadow:0 8px 20px -12px var(--brand);
 }
-.cta:hover{opacity:.9}
+.cta:hover{filter:brightness(1.06)}
 .cta .arr{display:inline-block;transition:transform .18s;opacity:.75}
 .cta:hover .arr{transform:translateX(4px)}
 .cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
@@ -162,8 +162,8 @@ button:disabled{cursor:default}
 }
 .opt .txt{flex:1;font-size:15.5px;font-weight:500;word-break:break-word}
 .opt .mark{flex:0 0 auto;font-size:12px;font-weight:650;letter-spacing:.02em;opacity:0;transition:.15s;white-space:nowrap}
-.opt.picked{border-color:var(--ink);background:var(--card-2)}
-.opt.picked .key{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.opt.picked{border-color:var(--brand);background:var(--brand-soft)}
+.opt.picked .key{background:var(--brand);color:#fff;border-color:var(--brand)}
 .opt.correct{border-color:var(--ok);background:var(--ok-soft)}
 .opt.correct .key{background:var(--ok);color:#fff;border-color:var(--ok)}
 .opt.correct .mark{opacity:1;color:var(--ok)}
@@ -180,8 +180,8 @@ button:disabled{cursor:default}
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
 }
 .btn:hover{border-color:var(--ink-3)}
-.btn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.btn.primary:hover{opacity:.9}
+.btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+.btn.primary:hover{filter:brightness(1.06)}
 .btn.primary:disabled{opacity:.35}
 .btn.grow{flex:1}
 .btn-sm{padding:9px 14px;font-size:13.5px;border-radius:9px}
@@ -234,7 +234,7 @@ button:disabled{cursor:default}
 .wrongitem .wt{font-size:12px;color:var(--err);margin-left:auto;flex:0 0 auto}
 
 /* ---------- 抽屉 ---------- */
-.mask{position:fixed;inset:0;background:rgba(20,18,15,.34);z-index:60;opacity:0;pointer-events:none;transition:.2s}
+.mask{position:fixed;inset:0;background:rgba(10,20,32,.36);z-index:60;opacity:0;pointer-events:none;transition:.2s}
 .mask.on{opacity:1;pointer-events:auto}
 .sheet{
   position:fixed;z-index:70;background:var(--card);border:1px solid var(--line);
@@ -257,7 +257,7 @@ button:disabled{cursor:default}
 .set-row .sub{font-size:12px;color:var(--ink-3);margin-top:2px}
 .seg{display:flex;border:1px solid var(--line-2);border-radius:9px;overflow:hidden;flex:0 0 auto}
 .seg button{padding:7px 12px;font-size:13px;color:var(--ink-2);min-width:38px}
-.seg button.on{background:var(--ink);color:var(--paper)}
+.seg button.on{background:var(--brand);color:#fff}
 .switch{width:44px;height:26px;border-radius:999px;background:var(--line-2);position:relative;transition:.2s;flex:0 0 auto}
 .switch.on{background:var(--ok)}
 .switch i{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
@@ -339,7 +339,7 @@ button:disabled{cursor:default}
       <span id="qType">单选</span>
       <span class="spacer"></span>
       <span id="qTimer">00:00</span>
-      <button class="btn btn-sm" id="btnQuit" style="border:none;color:var(--ink-3)">结束</button>
+      <button class="btn btn-sm" id="btnQuit" style="background:transparent;border:none;color:var(--ink-3)">结束</button>
     </div>
 
     <div class="card">
@@ -842,7 +842,7 @@ $('#btnTheme').onclick = function(){
 };
 function applyTheme(){
   document.documentElement.setAttribute('data-theme', SET.theme);
-  document.querySelector('meta[name=theme-color]').setAttribute('content', SET.theme==='dark'?'#141412':'#FAF9F6');
+  document.querySelector('meta[name=theme-color]').setAttribute('content', SET.theme==='dark'?'#0D1620':'#F3F8FD');
 }
 
 function renderLookSheet(){
